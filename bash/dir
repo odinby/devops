@@ -1,0 +1,11 @@
+#!/bin/bash
+DIR=/tmp/111
+if ! [ -d $DIR ] 
+then
+	mkdir $DIR
+fi
+
+if [ -d "script" ]; then
+        mkdir "$script"
+fi
+
