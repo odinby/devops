@@ -1,0 +1,3 @@
+#!/bin/bash
+read user
+useradd -m -N $user
