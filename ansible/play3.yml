@@ -1,0 +1,40 @@
+---
+- name: Install App
+  hosts: all
+  become: yes
+  vars_files:
+    - group_vars/dev.yml
+
+
+  tasks:
+    - name: install app rhel
+      yum: name=httpd state=latest
+      when: ansible_os_family == "RedHat"
+      ignore_errors: yes
+
+    - name: Install apache Debian
+      apt: name=apache2 state=latest
+      when: ansible_os_family == "Debian"
+
+    - name: remove apache Debian
+      apt: name=apache2 state=absent
+        #      when: "{{ text }}" == ansible 
+      when: text == "ansible"
+
+    - name: run script add web
+      script: script.sh
+
+    - name: install pip
+      apt: name=pip state=latest
+      become: yes
+    - name: pip install
+      shell: pip install docker
+      become: yes
+
+    - name: Create postgres
+      docker_container:
+        name: postgres
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: pass
+

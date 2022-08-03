@@ -1,0 +1,16 @@
+---
+
+- name: apt
+  hosts: all
+  become: yes
+    #  vars_files:
+    #- group_vars/dev.yml
+
+
+  tasks:
+  - name: apt update
+      apt:
+        name: "*"
+        state: latest
+      
+

@@ -1,0 +1,2 @@
+[test]
+dvps2 ansible_host=192.168.23.96 ansible_user=odin ansible_private_key_file=/root/.ssh/id_rsa

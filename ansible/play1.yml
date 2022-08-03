@@ -1,0 +1,28 @@
+---
+- name: Var
+  hosts: all
+  become: yes
+  vars_files:
+    - group_vars/dev.yml
+ 
+
+  tasks:
+  - name: print pass
+    debug:
+      var: password
+
+  - debug:
+      msg: "text1  {{ text1 }}"
+
+  - set_fact: all_text="{{ text1 }} {{ text2 }}"
+  - debug:
+      var: all_text
+
+  - shell: uptime
+    register: result
+
+  - debug:
+      var: result
+  
+  
+
