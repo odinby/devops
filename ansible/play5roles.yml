@@ -1,0 +1,16 @@
+---
+- name: roles
+  hosts: all
+  become: yes
+
+  roles:
+    - deploy_apache_web
+    - mongodb_repository
+    - mongodb_linux
+    - mongodb_repository
+    - mongodb_install
+    - mongodb_mongod  
+    - mongodb_config
+    - mongodb_mongos  
+    - mongodb_selinux
+    - mongodb_auth

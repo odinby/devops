@@ -9,8 +9,8 @@
 
   tasks:
   - name: apt update
-      apt:
-        name: "*"
-        state: latest
+    apt:
+      name: "*"
+      state: latest
       
 

@@ -1,0 +1,13 @@
+---
+
+- name: Loops
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: hello
+    debug: msg="Hello {{ item }}"
+    loop:
+      - "Minsk"
+      - "Gomel"
+      - "Brest"
