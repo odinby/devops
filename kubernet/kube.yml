@@ -1,0 +1,13 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+ name: prod
+ region: us-east-1
+ version: "1.21"
+
+nodeGroups:
+ - name: NodeProd
+   instanceType: t2.micro
+   desiredCapacity: 2
