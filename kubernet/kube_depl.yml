@@ -1,0 +1,12 @@
+---
+kubectl create deployment httpd --image httpd:latest
+
+kebectl get pods\all
+
+kubectl describe pods NAMEPODS
+kubectl scale depoyment httpd --replicas 4
+
+kubectl delete pods NAME
+
+kubectl autoscale deplyment httpd --min=2 --max=3 
+

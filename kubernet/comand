@@ -1,0 +1,6 @@
+---
+kubectl create deployment httpd --image httpd:latest
+
+kebectl get pods\all
+
+
